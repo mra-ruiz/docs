@@ -17,7 +17,7 @@ Let's check if you have Docker installed ...
 ---
 validate: $body
 ---
-(docker --version >& /dev/null) && echo "Docker is good to go!" || echo "Please install Docker"
+(docker info) && echo "Docker is good to go!" || echo "Please install Docker"
 
 ```
 
