@@ -5,7 +5,6 @@
 
         ```bash
         ---
-        id: install-knative-cli-homebrew
         validate: kn version
         ---
         brew install kn
