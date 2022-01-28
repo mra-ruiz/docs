@@ -1,7 +1,7 @@
 !!! todo "Installing the `quickstart` plugin"
     === "Using Homebrew"
         For macOS, you can install the `quickstart` plugin by using [Homebrew](https://brew.sh){target=_blank}.
-            ```
+            ```bash
             brew install knative-sandbox/kn-plugins/quickstart
             ```
 
@@ -13,26 +13,26 @@
     === "Using Go"
         1. Check out the `kn-plugin-quickstart` repository:
 
-              ```
+              ```bash
               git clone https://github.com/knative-sandbox/kn-plugin-quickstart.git
               cd kn-plugin-quickstart/
               ```
 
         1. Build an executable binary:
 
-              ```
+              ```bash
               hack/build.sh
               ```
 
         1. Move the executable binary file to a directory on your `PATH`:
 
-             ```
+             ```bash
              mv kn-quickstart /usr/local/bin
              ```
 
          1. Verify that the plugin is working, for example:
 
-             ```
+             ```bash
              kn quickstart --help
              ```
 
@@ -48,6 +48,10 @@ The `quickstart` plugin completes the following functions:
 
         Install Knative and Kubernetes on a local Docker daemon by running:
         ```bash
+        ---
+        id: kn-quickstart-docker-daemon
+        validate: kind get clusters
+        ---
         kn quickstart kind
         ```
 
@@ -60,6 +64,10 @@ The `quickstart` plugin completes the following functions:
 
         Install Knative and Kubernetes in a minikube instance by running:
         ```bash
+        ---
+        id: kn-quickstart-minikube
+        validate: minikube profile list
+        ---
         kn quickstart minikube
         ```
 
