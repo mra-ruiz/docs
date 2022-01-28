@@ -15,13 +15,10 @@ Let's check if you have Docker installed ...
 
 ```bash
 ---
-id: docker-prereq
-validate: (docker --version >& /dev/null) && exit 0 || exit 1
+validate: $body
 ---
-if [ docker --version >& /dev/null ];
-    then echo "Your Docker is good"; exit 0
-    else echo "Please install Docker"; exit 1
-fi
+(docker --version >& /dev/null) && echo "Docker is good to go!" || echo "Please install Docker"
+
 ```
 
 ### Prepare local Kubernetes cluster
@@ -32,15 +29,9 @@ Let's check if you have kind or minikube installed ...
 
 ```bash
 ---
-id: kind-minikube-prereq
-validate: ((kind get clusters >& /dev/null) || (minkube start >& /dev/null)) && exit 0 || exit 1
+validate: $body
 ---
-if [ kind get clusters --client >& /dev/null ];
-    then echo "Kind found!"; exit 0
-elif [ minikube start --client >& /dev/null ];
-    then echo "minikube found!"; exit 0
-else echo "Please install Kind or Minikube"; exit 1
-fi
+((kind get clusters >& /dev/null) || (minkube start >& /dev/null)) && echo "Kind or minikube is good to go!" || echo "Please install Kind or minikube"
 ```
 
 ### Install the Kubernetes CLI
@@ -51,13 +42,9 @@ Let's see if you have kubectl installed ...
 
 ```bash
 ---
-id: kubectl-prereq
-validate: (kubectl version --client >& /dev/null) && exit 0 || exit 1
+validate: $body
 ---
-if [ kubectl version --client >& /dev/null ];
-    then echo "You have kubectl installed!"; exit 0
-    else echo "Please install kubectl"; exit 1
-fi
+(kubectl version --client >& /dev/null) && echo "kubectl is good to go!" || echo "Please install kubectl"
 ```
 
 ### Install the Knative CLI

@@ -49,7 +49,6 @@ The `quickstart` plugin completes the following functions:
         Install Knative and Kubernetes on a local Docker daemon by running:
         ```bash
         ---
-        id: kn-quickstart-docker-daemon
         validate: kind get clusters
         ---
         kn quickstart kind
@@ -65,7 +64,6 @@ The `quickstart` plugin completes the following functions:
         Install Knative and Kubernetes in a minikube instance by running:
         ```bash
         ---
-        id: kn-quickstart-minikube
         validate: minikube profile list
         ---
         kn quickstart minikube
