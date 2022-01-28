@@ -22,7 +22,7 @@
 
         1. Rename the binary to `kn` and make it executable by running the commands:
 
-            ```bash
+            ```
             mv <path-to-binary-file> kn
             chmod +x kn
             ```
@@ -31,13 +31,13 @@
 
         1. Move the executable binary file to a directory on your PATH by running the command:
 
-            ```bash
+            ```
             mv kn /usr/local/bin
             ```
 
         1. Verify that the plugin is working by running the command:
 
-            ```bash
+            ```
             kn version
             ```
 
@@ -45,20 +45,20 @@
 
         1. Check out the `kn` client repository:
 
-              ```bash
+              ```
               git clone https://github.com/knative/client.git
               cd client/
               ```
 
         1. Build an executable binary:
 
-              ```bash
+              ```
               hack/build.sh -f
               ```
 
         1. Move `kn` into your system path, and verify that `kn` commands are working properly. For example:
 
-              ```bash
+              ```
               kn version
               ```
 
@@ -70,7 +70,7 @@
 
         You can run `kn` from a container image. For example:
 
-        ```bash
+        ```
         docker run --rm -v "$HOME/.kube/config:/root/.kube/config" gcr.io/knative-releases/knative.dev/client/cmd/kn:latest service list
         ```
 

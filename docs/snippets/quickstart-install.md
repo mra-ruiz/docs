@@ -13,26 +13,26 @@
     === "Using Go"
         1. Check out the `kn-plugin-quickstart` repository:
 
-              ```bash
+              ```
               git clone https://github.com/knative-sandbox/kn-plugin-quickstart.git
               cd kn-plugin-quickstart/
               ```
 
         1. Build an executable binary:
 
-              ```bash
+              ```
               hack/build.sh
               ```
 
         1. Move the executable binary file to a directory on your `PATH`:
 
-             ```bash
+             ```
              mv kn-quickstart /usr/local/bin
              ```
 
          1. Verify that the plugin is working, for example:
 
-             ```bash
+             ```
              kn quickstart --help
              ```
 
