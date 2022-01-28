@@ -68,7 +68,7 @@ The Knative CLI (`kn`) provides a quick and easy interface for creating Knative 
 
 --8<-- "install-kn.md"
 
-## Install the Knative "Quickstart" environment: Helps us use knative on a local machines
+## Install the Knative "Quickstart" environment
 
 You can get started with a local deployment of Knative by using the Knative `quickstart` plugin.
 
