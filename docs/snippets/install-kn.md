@@ -3,7 +3,7 @@
     === "Using Homebrew"
         For macOS, you can install `kn` by using [Homebrew](https://brew.sh){target=_blank}.
 
-        ```
+        ```bashx
         brew install kn
         ```
 
