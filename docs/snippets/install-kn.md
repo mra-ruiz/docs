@@ -3,7 +3,11 @@
     === "Using Homebrew"
         For macOS, you can install `kn` by using [Homebrew](https://brew.sh){target=_blank}.
 
-        ```bashx
+        ```bash
+        ---
+        id: install-knative-cli-homebrew
+        validate: kn version
+        ---
         brew install kn
         ```
 
@@ -18,7 +22,7 @@
 
         1. Rename the binary to `kn` and make it executable by running the commands:
 
-            ```
+            ```bash
             mv <path-to-binary-file> kn
             chmod +x kn
             ```
@@ -27,13 +31,13 @@
 
         1. Move the executable binary file to a directory on your PATH by running the command:
 
-            ```
+            ```bash
             mv kn /usr/local/bin
             ```
 
         1. Verify that the plugin is working by running the command:
 
-            ```
+            ```bash
             kn version
             ```
 
@@ -41,20 +45,20 @@
 
         1. Check out the `kn` client repository:
 
-              ```
+              ```bash
               git clone https://github.com/knative/client.git
               cd client/
               ```
 
         1. Build an executable binary:
 
-              ```
+              ```bash
               hack/build.sh -f
               ```
 
         1. Move `kn` into your system path, and verify that `kn` commands are working properly. For example:
 
-              ```
+              ```bash
               kn version
               ```
 
@@ -66,7 +70,7 @@
 
         You can run `kn` from a container image. For example:
 
-        ```
+        ```bash
         docker run --rm -v "$HOME/.kube/config:/root/.kube/config" gcr.io/knative-releases/knative.dev/client/cmd/kn:latest service list
         ```
 
@@ -77,7 +81,7 @@
 
     If you are having issues upgrading using Homebrew, it may be due to a change to a `CLI` repository, where `master` branch was renamed to `main`. If so, run
 
-    ```
+    ```bash
     brew tap --repair
     brew update
     brew upgrade kn
