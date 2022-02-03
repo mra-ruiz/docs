@@ -1,7 +1,4 @@
 # Getting Started with Knative
-
-Knative is an open source project that adds components for deploying, running, and managing serverless, cloud-native applications to Kubernetes. Knative eliminates the tasks of provisioning and managing servers. This lets developers focus on their code without having to worry about setting up complex infrastructure.
-
 ## Before you begin
 > This Getting started guide provides instructions on how to install a local distribution of Knative for development use. The Knative Quickstart Environments shown in this guide are for experimentation use only. For production installation, see our [Installing Guide](../install/README.md)
 
