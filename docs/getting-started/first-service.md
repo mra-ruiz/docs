@@ -27,6 +27,7 @@ Since our "Hello world" Service is being deployed as a Knative Service, not a Ku
     ```{ .bash .no-copy }
     Service hello created to latest revision 'hello-world' is available at URL:
     http://hello.default.127.0.0.1.sslip.io
+    ```
 
 === "YAML"
 
