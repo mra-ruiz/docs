@@ -1,15 +1,4 @@
-# Welcome to the Knative Quickstart tutorial
+# Knative Quickstart tutorial - Installing Knative on Kind
 
-This tutorial lets you try out some of the commonly used features in Knative.
-
-In the first lesson you will install Knative locally using the Knative `quickstart` plugin.
-To follow the tutorial you must use the `quickstart` plugin to install Knative.
-The plugin provides a Knative deployment for development use, which has
-been configured with the components you need for this tutorial.
-
-Then, on your new cluster, you will carry out common tasks for **Knative Serving** and **Knative Eventing**.
-
-We recommend that you complete the topics in this tutorial in order.
-
-!!! tip
-    Hit ++"."++ (period) on your keyboard to move forward in the tutorial. Use ++","++ (comma) to go back at any time.
+In this tutorial, you will install Knative locally using the Knative `quickstart` plugin. This pluging will install a Knative deployment for development use, which has
+been configured with the components you need for this tutorial. Then, on your new cluster, you will carry out common tasks for **Knative Serving** and **Knative Eventing**.

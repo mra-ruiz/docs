@@ -4,15 +4,21 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
 
 === "Using Homebrew"
 
-    - Install `kn` by using [Homebrew](https://brew.sh){target=_blank}:
+    - For macOS, nstall `kn` by using [Homebrew](https://brew.sh){target=_blank}:
 
         ```bash
+        ---
+        validate: kn version
+        ---
         brew install kn
         ```
 
     - Upgrade an existing install to the latest version by running the command:
 
         ```bash
+        ---
+        optional: True
+        ---
         brew upgrade kn
         ```
 
@@ -35,6 +41,9 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
     1. Rename the binary to `kn` and make it executable by running the commands:
 
         ```bash
+        ---
+        optional: True
+        ---
         mv <path-to-binary-file> kn
         chmod +x kn
         ```
@@ -44,35 +53,42 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
     1. Move the executable binary file to a directory on your PATH by running the command:
 
         ```bash
+        ---
+        validate: kn version
+        optional: True
+        ---
         mv kn /usr/local/bin
-        ```
-
-    1. Verify that the plugin is working by running the command:
-
-        ```bash
-        kn version
         ```
 
 === "Using Go"
 
     1. Check out the `kn` client repository:
 
-          ```bash
-          git clone https://github.com/knative/client.git
-          cd client/
-          ```
+        ```bash
+        ---
+        optional: True
+        ---
+        git clone https://github.com/knative/client.git
+        cd client/
+        ```
 
     1. Build an executable binary:
 
-          ```bash
-          hack/build.sh -f
-          ```
+        ```bash
+        ---
+        optional: True
+        ---
+        hack/build.sh -f
+        ```
 
     1. Move `kn` into your system path, and verify that `kn` commands are working properly. For example:
 
-          ```bash
-          kn version
-          ```
+        ```bash
+        ---
+        optional: True
+        ---
+        kn version
+        ```
 
 === "Using a container image"
 
@@ -83,6 +99,9 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
     You can run `kn` from a container image. For example:
 
     ```bash
+    ---
+    optional: True
+    ---
     docker run --rm -v "$HOME/.kube/config:/root/.kube/config" gcr.io/knative-releases/knative.dev/client/cmd/kn:latest service list
     ```
 

@@ -1,45 +1,45 @@
 # Install Knative using quickstart
 
 This topic describes how to install a local deployment of Knative Serving and
-Eventing using the Knative `quickstart` plugin.
-
-The plugin installs a preconfigured Knative deployment on a local Kubernetes cluster.
+Eventing using the Knative `quickstart` plugin. The plugin installs a preconfigured Knative deployment on a local Kubernetes cluster.
 
 !!! warning
     Knative `quickstart` environments are for experimentation use only.
     For a production ready installation, see the [YAML-based installation](/docs/install/yaml-install/)
     or the [Knative Operator installation](/docs/install/operator/knative-with-operators/).
 
-## Before you begin
+## Required tools
 
 Before you can get started with a Knative `quickstart` deployment you must install:
 
-- [kind](https://kind.sigs.k8s.io/docs/user/quick-start){target=_blank} (Kubernetes in Docker)
-or [minikube](https://minikube.sigs.k8s.io/docs/start/){target=_blank} to enable
-you to run a local Kubernetes cluster with Docker container nodes.
-- The [Kubernetes CLI (`kubectl`)](https://kubernetes.io/docs/tasks/tools/install-kubectl){target=_blank}
-to run commands against Kubernetes clusters.
-You can use `kubectl` to deploy applications, inspect and manage cluster resources, and view logs.
-- The Knative CLI (`kn`) v0.25 or later. For instructions, see the next section.
+--8<-- "docker-guidebook.md"
 
-### Install the Knative CLI
+--8<-- "kind-guidebook.md"
 
---8<-- "install-kn.md"
+--8<-- "kubectl-guidebook.md"
+
+--8<-- "kn-cli-guidebook.md"
 
 ## Install the Knative quickstart plugin
 
-To get started, install the Knative `quickstart` plugin:
+After installing the required tools, install the Knative `quickstart` plugin:
 
 === "Using Homebrew"
-    - Install the `quickstart` plugin by using [Homebrew](https://brew.sh){target=_blank}:
+    - For macOS, install the `quickstart` plugin by using [Homebrew](https://brew.sh){target=_blank}:
 
         ```bash
+        ---
+        validate: kn quickstart --help
+        ---
         brew install knative-sandbox/kn-plugins/quickstart
         ```
 
     - Upgrade an existing install to the latest version by running the command:
 
         ```bash
+        ---
+        optional: True
+        ---
         brew upgrade knative-sandbox/kn-plugins/quickstart
         ```
 === "Using a binary"
@@ -50,77 +50,74 @@ To get started, install the Knative `quickstart` plugin:
     1. Verify that the plugin is working, for example:
 
         ```bash
+        ---
+        optional: True
+        ---
         kn quickstart --help
         ```
 
 === "Using Go"
     1. Check out the `kn-plugin-quickstart` repository:
 
-          ```bash
-          git clone https://github.com/knative-sandbox/kn-plugin-quickstart.git
-          cd kn-plugin-quickstart/
-          ```
+        ```bash
+        ---
+        optional: True
+        ---
+        git clone https://github.com/knative-sandbox/kn-plugin-quickstart.git
+        cd kn-plugin-quickstart/
+        ```
 
     1. Build an executable binary:
 
-          ```bash
-          hack/build.sh
-          ```
+        ```bash
+        ---
+        optional: True
+        ---
+        hack/build.sh
+        ```
 
     1. Move the executable binary file to a directory on your `PATH`:
 
-          ```bash
-          mv kn-quickstart /usr/local/bin
-          ```
-
-     1. Verify that the plugin is working, for example:
-
-          ```bash
-          kn quickstart --help
-          ```
+        ```bash
+        ---
+        validate: kn quickstart --help
+        optional: True
+        ---
+        mv kn-quickstart /usr/local/bin
+        ```
 
 ## Run the Knative quickstart plugin
 
 The `quickstart` plugin completes the following functions:
 
-1. **Checks if you have the selected Kubernetes instance installed**
-1. **Creates a cluster called `knative`**
-1. **Installs Knative Serving** with Kourier as the default networking layer, and sslip.io as the DNS
-1. **Installs Knative Eventing** and creates an in-memory Broker and Channel implementation
+1. Checks if you have the selected Kubernetes instance installed
+1. Creates a cluster called `knative`
+1. Installs Knative Serving with Kourier as the default networking layer, and sslip.io as the DNS
+1. Installs Knative Eventing and creates an in-memory Broker and Channel implementation
 
 
 To get a local deployment of Knative, run the `quickstart` plugin:
 
 === "Using kind"
 
-    1. Install Knative and Kubernetes on a local Docker daemon by running:
+    Install Knative and Kubernetes on a local Docker daemon by running:
 
-        ```bash
-        ---
-        validate: kind get clusters
-        ---
-        kn quickstart kind
-        ```
-
-    1. After the plugin is finished, verify you have a cluster called `knative`:
-
-        ```bash
-        kind get clusters
-        ```
+    ```bash
+    ---
+    validate: kvalidate: (kubectl cluster-info --context kind-knative) && exit 1 || exit 0
+    ---
+    kn quickstart kind
+    ```
 
 === "Using minikube"
 
-    1. Install Knative and Kubernetes in a minikube instance by running:
+    Install Knative and Kubernetes in a minikube instance by running:
 
-        ```bash
-        ---
-        validate: minikube profile list
-        ---
-        kn quickstart minikube
-        ```
+    ```bash
+    ---
+    validate: minikube profile list
+    ---
+    kn quickstart minikube
+    ```
 
-    1. After the plugin is finished, verify you have a cluster called `knative`:
-
-        ```bash
-        minikube profile list
-        ```
+After the plugin is finished, you should have a cluster called `knative`

@@ -16,22 +16,19 @@ you can reinstall Knative on a new cluster using the [`quickstart` plugin](quick
     Delete your `kind` cluster by running the command:
 
     ```bash
+    ---
+    validate: validate: (kubectl cluster-info --context kind-knative) && exit 1 || exit 0
+    ---
     kind delete clusters knative
-    ```
-    !!! success "Example output"
-        ```{ .bash .no-copy }
-        Deleted clusters: ["knative"]
-        ```
 
 === "minikube"
 
     Delete your `minikube` cluster by running the command:
 
     ```bash
+    ---
+    optional: True
+    validate: validate: (kubectl cluster-info --context kind-knative) && exit 1 || exit 0
+    ---
     minikube delete -p knative
     ```
-    !!! success "Example output"
-        ```{ .bash .no-copy }
-        🔥  Deleting "knative" in hyperkit ...
-        💀  Removed all traces of the "knative" cluster.
-        ```

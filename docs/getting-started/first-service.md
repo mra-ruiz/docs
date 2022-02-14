@@ -1,15 +1,18 @@
 # Deploying your first Knative Service
 
-**In this tutorial, you will deploy a "Hello world" service.**
+In this tutorial, you will deploy a "Hello world" service.
 
 This service will accept an environment variable, `TARGET`, and print "`Hello ${TARGET}!`."
 
-Since our "Hello world" Service is being deployed as a Knative Service, not a Kubernetes Service, it gets some **super powers out of the box** :rocket:.
+Since our "Hello world" Service is being deployed as a Knative Service, not a Kubernetes Service, it gets some super powers out of the box :rocket:.
 
 ## Knative Service: "Hello world!"
 === "kn"
 
     ``` bash
+    ---
+    validate: kn service describe hello
+    ---
     kn service create hello \
     --image gcr.io/knative-samples/helloworld-go \
     --port 8080 \
@@ -20,15 +23,12 @@ Since our "Hello world" Service is being deployed as a Knative Service, not a Ku
     ??? question "Why did I pass in `revision-name`?"
         Note the name "world" which you passed in as "revision-name," naming your `Revisions` will help you to more easily identify them, but don't worry, you'll learn more about `Revisions` later.
 
-    ==**Expected output:**==
-    ```{ .bash .no-copy }
-    Service hello created to latest revision 'hello-world' is available at URL:
-    http://hello.default.127.0.0.1.sslip.io
-    ```
-
 === "YAML"
 
     ``` bash
+    ---
+    optional: True
+    ---
     apiVersion: serving.knative.dev/v1
     kind: Service
     metadata:
@@ -49,31 +49,23 @@ Since our "Hello world" Service is being deployed as a Knative Service, not a Ku
     ```
     Once you've created your YAML file (named something like "hello.yaml"):
     ``` bash
+    ---
+    validate: kn service describe hello
+    optional: True
+    ---
     kubectl apply -f hello.yaml
     ```
     ??? question "Why did I pass in the second name, `hello-world`?"
         Note the name "hello-world" which you passed in under "metadata" in your YAML file. Naming your `Revisions` will help you to more easily identify them, but don't worry if this if a bit confusing now, you'll learn more about `Revisions` later.
 
-    ==**Expected output:**==
-    ```{ .bash .no-copy }
-    service.serving.knative.dev/hello created
-    ```
-
-    To see the URL where your Knative Service is hosted, leverage the `kn` CLI:
-    ```bash
-    kn service list
-    ```
 ## Ping your Knative Service
 Ping your Knative Service by opening [http://hello.default.127.0.0.1.sslip.io](http://hello.default.127.0.0.1.sslip.io){target=_blank} in your browser of choice or by running the command:
 
 ```
+---
+validate: $body
+---
 curl http://hello.default.127.0.0.1.sslip.io
-```
-
-
-==**Expected output:**==
-```{ .bash .no-copy }
-Hello World!
 ```
 
 ??? question "Are you seeing `curl: (6) Could not resolve host: hello.default.127.0.0.1.sslip.io`?"
