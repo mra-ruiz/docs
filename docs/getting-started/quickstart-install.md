@@ -1,1 +1,1 @@
---8<-- "quickstart-install.md"
+--8<-- "https://raw.githubusercontent.com/mra-ruiz/docs/main/docs/snippets/quickstart-install.md"

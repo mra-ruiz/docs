@@ -17,9 +17,10 @@ you can reinstall Knative on a new cluster using the [`quickstart` plugin](quick
 
     ```bash
     ---
-    validate: validate: (kubectl cluster-info --context kind-knative) && exit 1 || exit 0
+    validate: (kubectl cluster-info --context kind-knative) && exit 1 || exit 0
     ---
     kind delete clusters knative
+    ```
 
 === "minikube"
 
@@ -28,7 +29,7 @@ you can reinstall Knative on a new cluster using the [`quickstart` plugin](quick
     ```bash
     ---
     optional: True
-    validate: validate: (kubectl cluster-info --context kind-knative) && exit 1 || exit 0
+    validate: (kubectl cluster-info --context kind-knative) && exit 1 || exit 0
     ---
     minikube delete -p knative
     ```

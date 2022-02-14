@@ -25,24 +25,27 @@ Before you can get started with a Knative `quickstart` deployment you must insta
 After installing the required tools, install the Knative `quickstart` plugin:
 
 === "Using Homebrew"
-    - For macOS, install the `quickstart` plugin by using [Homebrew](https://brew.sh){target=_blank}:
 
-        ```bash
-        ---
-        validate: kn quickstart --help
-        ---
-        brew install knative-sandbox/kn-plugins/quickstart
-        ```
+    For macOS, install the `quickstart` plugin by using [Homebrew](https://brew.sh){target=_blank}:
 
-    - Upgrade an existing install to the latest version by running the command:
+    ```bash
+    ---
+    validate: kn quickstart --help
+    ---
+    brew install knative-sandbox/kn-plugins/quickstart
+    ```
 
-        ```bash
-        ---
-        optional: True
-        ---
-        brew upgrade knative-sandbox/kn-plugins/quickstart
-        ```
+    Upgrade an existing install to the latest version by running the command:
+
+    ```bash
+    ---
+    optional: True
+    ---
+    brew upgrade knative-sandbox/kn-plugins/quickstart
+    ```
+    
 === "Using a binary"
+
     1. Download the executable binary for your system from the [`quickstart` release page](https://github.com/knative-sandbox/kn-plugin-quickstart/releases){target=_blank}.
 
     1. Move the executable binary file to a directory on your `PATH`, for example, in `/usr/local/bin`.
@@ -57,6 +60,7 @@ After installing the required tools, install the Knative `quickstart` plugin:
         ```
 
 === "Using Go"
+
     1. Check out the `kn-plugin-quickstart` repository:
 
         ```bash
@@ -104,7 +108,7 @@ To get a local deployment of Knative, run the `quickstart` plugin:
 
     ```bash
     ---
-    validate: kvalidate: (kubectl cluster-info --context kind-knative) && exit 1 || exit 0
+    validate: (kubectl cluster-info --context kind-knative) && exit 1 || exit 0
     ---
     kn quickstart kind
     ```
@@ -116,6 +120,7 @@ To get a local deployment of Knative, run the `quickstart` plugin:
     ```bash
     ---
     validate: minikube profile list
+    optional: True
     ---
     kn quickstart minikube
     ```
