@@ -96,6 +96,9 @@ To get a local deployment of Knative, run the `quickstart` plugin:
     1. Install Knative and Kubernetes on a local Docker daemon by running:
 
         ```bash
+        ---
+        validate: kind get clusters
+        ---
         kn quickstart kind
         ```
 
@@ -110,6 +113,9 @@ To get a local deployment of Knative, run the `quickstart` plugin:
     1. Install Knative and Kubernetes in a minikube instance by running:
 
         ```bash
+        ---
+        validate: minikube profile list
+        ---
         kn quickstart minikube
         ```
 
