@@ -53,6 +53,9 @@ After installing the required tools, install the Knative `quickstart` plugin:
     1. Verify that the plugin is working, for example:
 
         ```bash
+        ---
+        optional: true
+        ---
         kn quickstart --help
         ```
 
@@ -61,6 +64,9 @@ After installing the required tools, install the Knative `quickstart` plugin:
     1. Check out the `kn-plugin-quickstart` repository:
 
         ```bash
+        ---
+        optional: true
+        ---
         git clone https://github.com/knative-sandbox/kn-plugin-quickstart.git
         cd kn-plugin-quickstart/
         ```
@@ -68,6 +74,9 @@ After installing the required tools, install the Knative `quickstart` plugin:
     1. Build an executable binary:
 
         ```bash
+        ---
+        optional: true
+        ---
         hack/build.sh
         ```
 
@@ -75,6 +84,7 @@ After installing the required tools, install the Knative `quickstart` plugin:
 
         ```bash
         ---
+        optional: true
         validate: kn quickstart --help
         ---
         mv kn-quickstart /usr/local/bin
@@ -109,6 +119,7 @@ To get a local deployment of Knative, run the `quickstart` plugin:
 
     ```bash
     ---
+    optional: true
     validate: minikube profile list
     ---
     kn quickstart minikube

@@ -31,6 +31,9 @@ Since our "Hello world" Service is being deployed as a Knative Service, not a Ku
 === "YAML"
 
     ``` bash
+    ---
+    optional: true
+    ---
     apiVersion: serving.knative.dev/v1
     kind: Service
     metadata:
@@ -54,6 +57,7 @@ Since our "Hello world" Service is being deployed as a Knative Service, not a Ku
 
     ``` bash
     ---
+    optional: true
     validate: kn service describe hello
     ---
     kubectl apply -f hello.yaml
