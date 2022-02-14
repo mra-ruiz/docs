@@ -33,7 +33,6 @@ you can reinstall Knative on a new cluster using the [`quickstart` plugin](quick
 
     ```bash
     ---
-    optional: true
     validate: (kubectl cluster-info --context kind-knative) && exit 1 || exit 0
     ---
     minikube delete -p knative

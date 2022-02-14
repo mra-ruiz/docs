@@ -44,9 +44,6 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
     1. Rename the binary to `kn` and make it executable by running the commands:
 
         ```bash
-        ---
-        optional: true
-        ---
         mv <path-to-binary-file> kn
         chmod +x kn
         ```
@@ -57,7 +54,6 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
 
         ```bash
         ---
-        optional: true
         validate: kn version
         ---
         mv kn /usr/local/bin
@@ -68,9 +64,6 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
     1. Check out the `kn` client repository:
 
         ```bash
-        ---
-        optional: true
-        ---
         git clone https://github.com/knative/client.git
         cd client/
         ```
@@ -78,9 +71,6 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
     1. Build an executable binary:
 
         ```bash
-        ---
-        optional: true
-        ---
         hack/build.sh -f
         ```
 
@@ -88,7 +78,6 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
 
         ```bash
         ---
-        optional: true
         validate: $body
         ---
         kn version
@@ -103,9 +92,6 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
     You can run `kn` from a container image. For example:
 
     ```bash
-    ---
-    optional: true
-    ---
     docker run --rm -v "$HOME/.kube/config:/root/.kube/config" gcr.io/knative-releases/knative.dev/client/cmd/kn:latest service list
     ```
 
