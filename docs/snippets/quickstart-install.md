@@ -12,13 +12,13 @@ Eventing using the Knative `quickstart` plugin. The plugin installs a preconfigu
 
 Before you can get started with a Knative `quickstart` deployment you must install:
 
---8<-- "docker-guidebook.md"
+--8<-- "https://raw.githubusercontent.com/mra-ruiz/docs/main/docs/snippets/docker-guidebook.md"
 
---8<-- "kind-guidebook.md"
+--8<-- "https://raw.githubusercontent.com/mra-ruiz/docs/main/docs/snippets/kind-guidebook.md"
 
---8<-- "kubectl-guidebook.md"
+--8<-- "https://raw.githubusercontent.com/mra-ruiz/docs/main/docs/snippets/kubectl-guidebook.md"
 
---8<-- "kn-cli-guidebook.md"
+--8<-- "https://raw.githubusercontent.com/mra-ruiz/docs/main/docs/snippets/kn-cli-guidebook.md"
 
 ## Install the Knative quickstart plugin
 
@@ -39,7 +39,7 @@ After installing the required tools, install the Knative `quickstart` plugin:
 
     ```bash
     ---
-    optional: True
+    optional: true
     ---
     brew upgrade knative-sandbox/kn-plugins/quickstart
     ```
@@ -53,9 +53,6 @@ After installing the required tools, install the Knative `quickstart` plugin:
     1. Verify that the plugin is working, for example:
 
         ```bash
-        ---
-        optional: True
-        ---
         kn quickstart --help
         ```
 
@@ -64,9 +61,6 @@ After installing the required tools, install the Knative `quickstart` plugin:
     1. Check out the `kn-plugin-quickstart` repository:
 
         ```bash
-        ---
-        optional: True
-        ---
         git clone https://github.com/knative-sandbox/kn-plugin-quickstart.git
         cd kn-plugin-quickstart/
         ```
@@ -74,9 +68,6 @@ After installing the required tools, install the Knative `quickstart` plugin:
     1. Build an executable binary:
 
         ```bash
-        ---
-        optional: True
-        ---
         hack/build.sh
         ```
 
@@ -85,7 +76,6 @@ After installing the required tools, install the Knative `quickstart` plugin:
         ```bash
         ---
         validate: kn quickstart --help
-        optional: True
         ---
         mv kn-quickstart /usr/local/bin
         ```
@@ -120,7 +110,6 @@ To get a local deployment of Knative, run the `quickstart` plugin:
     ```bash
     ---
     validate: minikube profile list
-    optional: True
     ---
     kn quickstart minikube
     ```

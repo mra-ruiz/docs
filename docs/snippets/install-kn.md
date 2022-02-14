@@ -4,7 +4,7 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
 
 === "Using Homebrew"
 
-    - For macOS, nstall `kn` by using [Homebrew](https://brew.sh){target=_blank}:
+    - For macOS, install `kn` by using [Homebrew](https://brew.sh){target=_blank}:
 
         ```bash
         ---
@@ -17,7 +17,7 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
 
         ```bash
         ---
-        optional: True
+        optional: true
         ---
         brew upgrade kn
         ```
@@ -27,6 +27,9 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
         If you are having issues upgrading using Homebrew, it might be due to a change to a CLI repository where the `master` branch was renamed to `main`. Resolve this issue by running the command:
 
         ```bash
+        ---
+        optional: true
+        ---
         brew tap --repair
         brew update
         brew upgrade kn
@@ -41,9 +44,6 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
     1. Rename the binary to `kn` and make it executable by running the commands:
 
         ```bash
-        ---
-        optional: True
-        ---
         mv <path-to-binary-file> kn
         chmod +x kn
         ```
@@ -55,7 +55,6 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
         ```bash
         ---
         validate: kn version
-        optional: True
         ---
         mv kn /usr/local/bin
         ```
@@ -65,9 +64,6 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
     1. Check out the `kn` client repository:
 
         ```bash
-        ---
-        optional: True
-        ---
         git clone https://github.com/knative/client.git
         cd client/
         ```
@@ -75,9 +71,6 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
     1. Build an executable binary:
 
         ```bash
-        ---
-        optional: True
-        ---
         hack/build.sh -f
         ```
 
@@ -85,7 +78,7 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
 
         ```bash
         ---
-        optional: True
+        validate: $body
         ---
         kn version
         ```
@@ -99,9 +92,6 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
     You can run `kn` from a container image. For example:
 
     ```bash
-    ---
-    optional: True
-    ---
     docker run --rm -v "$HOME/.kube/config:/root/.kube/config" gcr.io/knative-releases/knative.dev/client/cmd/kn:latest service list
     ```
 
