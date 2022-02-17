@@ -24,12 +24,6 @@ First, deploy the Knative Service. This service accepts the environment variable
     ??? question "Why did I pass in `revision-name`?"
         Note the name "world" which you passed in as "revision-name," naming your `Revisions` will help you to more easily identify them, but don't worry, you'll learn more about `Revisions` later.
 
-    !!! Success "Expected output"
-        ```{ .bash .no-copy }
-        Service hello created to latest revision 'hello-world' is available at URL:
-        http://hello.default.127.0.0.1.sslip.io
-        ```
-
 === "YAML"
     1. Copy the following YAML into a file named `hello.yaml`:
 
@@ -59,20 +53,6 @@ First, deploy the Knative Service. This service accepts the environment variable
         ```
         ??? question "Why did I pass in the second name, `hello-world`?"
             Note the name `hello-world` which you passed in under `metadata` in your YAML file. Naming your `Revisions` will help you to more easily identify them, but don't worry if this if a bit confusing now, you'll learn more about `Revisions` later.
-        !!! Success "Expected output"
-            ```{ .bash .no-copy }
-            service.serving.knative.dev/hello created
-            ```
-    1. To see the URL where your Knative Service is hosted, leverage the `kn` CLI:
-
-        ```bash
-        kn service list
-        ```
-        !!! Success "Expected output"
-            ```bash
-            NAME    URL                                          LATEST        AGE   CONDITIONS   READY   REASON
-            hello   http://hello.default.127.0.0.1.sslip.io   hello-world   13s   3 OK / 3     True
-            ```
 
 
 ## Ping your Knative Service
@@ -82,11 +62,6 @@ Ping your Knative Service by opening [http://hello.default.127.0.0.1.sslip.io](h
 ```bash
 curl http://hello.default.127.0.0.1.sslip.io
 ```
-
-!!! Success "Expected output"
-    ```{ .bash .no-copy }
-    Hello World!
-    ```
 
 ??? question "Are you seeing `curl: (6) Could not resolve host: hello.default.127.0.0.1.sslip.io`?"
 

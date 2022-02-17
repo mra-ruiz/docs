@@ -18,10 +18,6 @@ you can reinstall Knative on a new cluster using the [`quickstart` plugin](quick
     ```bash
     kind delete clusters knative
     ```
-    !!! success "Example output"
-        ```{ .bash .no-copy }
-        Deleted clusters: ["knative"]
-        ```
 
 === "minikube"
 
@@ -30,8 +26,3 @@ you can reinstall Knative on a new cluster using the [`quickstart` plugin](quick
     ```bash
     minikube delete -p knative
     ```
-    !!! success "Example output"
-        ```{ .bash .no-copy }
-        🔥  Deleting "knative" in hyperkit ...
-        💀  Removed all traces of the "knative" cluster.
-        ```

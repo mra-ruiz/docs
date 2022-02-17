@@ -76,12 +76,6 @@ To get started, install the Knative `quickstart` plugin:
           mv kn-quickstart /usr/local/bin
           ```
 
-     1. Verify that the plugin is working, for example:
-
-          ```bash
-          kn quickstart --help
-          ```
-
 ## Run the Knative quickstart plugin
 
 The `quickstart` plugin completes the following functions:
@@ -102,12 +96,6 @@ To get a local deployment of Knative, run the `quickstart` plugin:
         kn quickstart kind
         ```
 
-    1. After the plugin is finished, verify you have a cluster called `knative`:
-
-        ```bash
-        kind get clusters
-        ```
-
 === "Using minikube"
 
     1. Install Knative and Kubernetes in a minikube instance by running:
@@ -116,11 +104,6 @@ To get a local deployment of Knative, run the `quickstart` plugin:
         kn quickstart minikube
         ```
 
-    1. After the plugin is finished, verify you have a cluster called `knative`:
-
-        ```bash
-        minikube profile list
-        ```
     1. To finish setting up networking for minikube, start the `minikube tunnel` process in a separate terminal window:
         ```bash
         minikube tunnel --profile knative

@@ -49,12 +49,6 @@ The `kn` CLI also simplifies completion of otherwise complex procedures such as 
         mv kn /usr/local/bin
         ```
 
-    1. Verify that the plugin is working by running the command:
-
-        ```bash
-        kn version
-        ```
-
 === "Using Go"
 
     1. Check out the `kn` client repository:
