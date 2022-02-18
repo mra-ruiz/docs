@@ -10,22 +10,6 @@ The plugin installs a preconfigured Knative deployment on a local Kubernetes clu
     For a production ready installation, see the [YAML-based installation](/docs/install/yaml-install/)
     or the [Knative Operator installation](/docs/install/operator/knative-with-operators/).
 
-## Before you begin
-
-Before you can get started with a Knative `quickstart` deployment you must install:
-
-- [kind](https://kind.sigs.k8s.io/docs/user/quick-start){target=_blank} (Kubernetes in Docker)
-or [minikube](https://minikube.sigs.k8s.io/docs/start/){target=_blank} to enable
-you to run a local Kubernetes cluster with Docker container nodes.
-- The [Kubernetes CLI (`kubectl`)](https://kubernetes.io/docs/tasks/tools/install-kubectl){target=_blank}
-to run commands against Kubernetes clusters.
-You can use `kubectl` to deploy applications, inspect and manage cluster resources, and view logs.
-- The Knative CLI (`kn`) v0.25 or later. For instructions, see the next section.
-
-### Install the Knative CLI
-
---8<-- "install-kn.md"
-
 ## Install the Knative quickstart plugin
 
 To get started, install the Knative `quickstart` plugin:

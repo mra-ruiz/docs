@@ -1,17 +1,11 @@
-# Deploying your first Knative Service
+# Deploying your Knative Service
 
-**In this tutorial, you will deploy a "Hello world" service.**
+The "Hello world" Service will be deployed as a Knative Service, not a Kubernetes Service.
 
-Since our "Hello world" Service is being deployed as a Knative Service, not a Kubernetes Service, it gets some **super powers out of the box** :rocket:.
+This service will accept an environment variable, `TARGET`, and print "`Hello ${TARGET}!`." If `TARGET` is not specified, World will be used as the default value.
 
 ## Knative Service: "Hello world!"
-
-First, deploy the Knative Service. This service accepts the environment variable,
-`TARGET`, and prints `Hello ${TARGET}!`.
-
 === "kn"
-
-    Deploy the Service by running the command:
 
     ``` bash
     kn service create hello \
@@ -22,10 +16,10 @@ First, deploy the Knative Service. This service accepts the environment variable
     ```
 
     ??? question "Why did I pass in `revision-name`?"
-        Note the name "world" which you passed in as "revision-name," naming your `Revisions` will help you to more easily identify them, but don't worry, you'll learn more about `Revisions` later.
+        Note the name "world" which you passed in as "revision-name," naming your `Revisions` will help you to more easily identify them
 
 === "YAML"
-    1. Copy the following YAML into a file named `hello.yaml`:
+    1. Create a new file, `service.yaml` and copy the following service definition into the file.
 
         ``` yaml
         apiVersion: serving.knative.dev/v1
@@ -46,6 +40,7 @@ First, deploy the Knative Service. This service accepts the environment variable
                     - name: TARGET
                       value: "World"
         ```
+
     1. Deploy the Knative Service by running the command:
 
         ``` bash
@@ -54,9 +49,26 @@ First, deploy the Knative Service. This service accepts the environment variable
         ??? question "Why did I pass in the second name, `hello-world`?"
             Note the name `hello-world` which you passed in under `metadata` in your YAML file. Naming your `Revisions` will help you to more easily identify them, but don't worry if this if a bit confusing now, you'll learn more about `Revisions` later.
 
+    1. To see the URL where your Knative Service is hosted, leverage the `kn` CLI:
+
+        ```bash
+        kn service list
+        ```
+
+    1. Run the following command to find the domain URL for your service:
+
+      ```bash
+      kubectl get ksvc helloworld-go  --output=custom-columns=NAME:.metadata.name,URL:.status.url
+      ```
+
+    After your service is created, Knative will perform the following steps:
+
+      - Create a new immutable revision for this version of the app.
+      - Network programming to create a route, ingress, service, and load balance
+        for your app.
+      - Automatically scale your pods up and down (including to zero active pods).
 
 ## Ping your Knative Service
-
 Ping your Knative Service by opening [http://hello.default.127.0.0.1.sslip.io](http://hello.default.127.0.0.1.sslip.io){target=_blank} in your browser of choice or by running the command:
 
 ```bash
@@ -78,5 +90,3 @@ curl http://hello.default.127.0.0.1.sslip.io
     Then simply restart the service with `sudo service systemd-resolved restart`.
 
     For MacOS users, you can add the DNS and domain using the network settings as explained [here](https://support.apple.com/en-gb/guide/mac-help/mh14127/mac).
-
-Congratulations :tada:, you've just created your first Knative Service. Up next, Autoscaling!
