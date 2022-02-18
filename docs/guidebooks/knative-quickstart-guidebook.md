@@ -35,7 +35,7 @@ codeblocks:
     - match: ^mv kn-quickstart /usr/local/bin$
       validate: kn quickstart --help
     - match: ^kn quickstart kind$
-      validate: (kubectl cluster-info --context kind-knative) && exit 1 || exit 0
+      validate: (kubectl cluster-info --context kind-knative) && exit 0 || exit 1
     - match: ^kn quickstart minikube$
       validate: minikube profile list
     - match: ^kn service create hello
@@ -56,12 +56,12 @@ codeblocks:
 
 ---
 
---8<-- "https://raw.githubusercontent.com/mra-ruiz/docs/guidebooks-v2/docs/getting-started/README.md"
+--8<-- "https://raw.githubusercontent.com/mra-ruiz/docs/guidebooks-v3/docs/getting-started/README.md"
 
 ---
 
---8<-- "https://raw.githubusercontent.com/mra-ruiz/docs/guidebooks-v2/docs/getting-started/quickstart-install.md"
+--8<-- "https://raw.githubusercontent.com/mra-ruiz/docs/guidebooks-v3/docs/getting-started/quickstart-install.md"
 
---8<-- "https://raw.githubusercontent.com/mra-ruiz/docs/guidebooks-v2/docs/getting-started/first-service.md"
+--8<-- "https://raw.githubusercontent.com/mra-ruiz/docs/guidebooks-v3/docs/getting-started/first-service.md"
 
---8<-- "https://raw.githubusercontent.com/mra-ruiz/docs/guidebooks-v2/docs/getting-started/clean-up.md"
+--8<-- "https://raw.githubusercontent.com/mra-ruiz/docs/guidebooks-v3/docs/getting-started/clean-up.md"
