@@ -1,3 +1,7 @@
+---
+title: Install Knative - Operators
+---
+
 # Installing Knative using the Operator
 
 Knative provides a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/) to install, configure and manage Knative.
