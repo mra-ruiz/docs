@@ -19,20 +19,20 @@ wizard:
 codeblocks:
     # Validation for Step 2: Building your application
     - match: ^git clone https://github.com/knative/docs.git knative-docs
-      validation: $? -e 0 && exit 0 \|\| exit 1
+      validate: $? -e 0 && exit 0 \|\| exit 1
     - match: ^go mod init github.com/knative/docs/code-samples/
-      validation: ls go.mod
+      validate: ls go.mod
     # Validation for Step 3: Deploying your service
     - match: ^# Build the container on your local machine
-      validation: $? -e 0 && exit 0 \|\| exit 1
+      validate: $? -e 0 && exit 0 \|\| exit 1
     - match: ^kubectl apply --filename service.yaml$
-      validation: kn service describe service
+      validate: kn service describe service
     - match: ^kubectl get ksvc helloworld-go  --output=custom-columns=NAME:.metadata.name,URL:.status.url$
-      validation: $body
+      validate: $body
     - match: ^ NAME
       optional: true
     - match: ^kn service create helloworld-go --image=docker.io/{username}/helloworld-go --env TARGET="Go Sample v1"$
-      validation: kn service describe helloworld-go
+      validate: kn service describe helloworld-go
     - match: ^Creating service 'helloworld-go' in namespace 'default'
       optional: true
     # Validation for Step 4: Pinging your Knative Service

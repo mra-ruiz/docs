@@ -11,7 +11,7 @@ wizard:
         - Run the Knative quickstart plugin
         - Clean Up
 codeblocks:
-    # validation for step 2: install the knative quickstart plugin
+    # Validation for step 2: install the knative quickstart plugin
     - match: ^brew install knative-sandbox/kn-plugins/quickstart$
       validate: kn quickstart --help
     - match: ^brew upgrade knative-sandbox/kn-plugins/quickstart$
@@ -24,7 +24,7 @@ codeblocks:
       validate: $? -e 0 && exit 0 || exit 1
     - match: ^mv kn-quickstart /usr/local/bin$
       validate: kn quickstart --help
-    # validation for step 3: Run the knative quickstart plugin
+    # Validation for step 3: Run the knative quickstart plugin
     - match: ^kn quickstart kind$
       validate: (kubectl cluster-info --context kind-knative) && exit 0 || exit 1
     - match: ^kn quickstart minikube$
