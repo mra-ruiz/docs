@@ -1,7 +1,7 @@
 ---
 title: Install Serving Extensions
 codeblocks:
-    - match: ^kubectl apply -f {{ artifact(repo="serving",file="serving-hpa.yaml")}}$
+    - match: ^kubectl apply -f {{ artifact\(repo="serving",file="serving-hpa.yaml")}}$
       validate: kn service describe serving-hpa
     - match: ^kubectl apply -f {{ artifact(repo="net-certmanager",file="release.yaml")}}$
       validate: kn service describe release
