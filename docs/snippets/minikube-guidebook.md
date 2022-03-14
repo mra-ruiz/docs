@@ -13,3 +13,7 @@ Enables you to run a local Kubernetes cluster with Docker container nodes.
 ```bash
 (minikube version >& /dev/null) && echo "You have minikube!" || (echo "Please install minikube" && exit 1)
 ```
+
+# Prerequisites
+
+--8<-- "../docs/snippets/docker-guidebook.md"
