@@ -31,7 +31,7 @@ codeblocks:
       validate: minikube profile list
     - match: ^minikube tunnel --profile knative$
       validate: $? -e 0 && exit 0 || exit 1
-    # Validation for Step 4: Clean Up
+    Validation for Step 4: Clean Up
     - match: ^kubectl delete --filename service.yaml$
     - match : ^kn service delete helloworld-go$
     - match: ^kind delete clusters knative$
@@ -49,12 +49,6 @@ codeblocks:
 ---
 
 # Install required tools
-
---8<-- "../docs/snippets/docker-guidebook.md"
-
---8<-- "../docs/snippets/kind-guidebook.md"
-
---8<-- "../docs/snippets/minikube-guidebook.md"
 
 --8<-- "../docs/snippets/kubectl-guidebook.md"
 
