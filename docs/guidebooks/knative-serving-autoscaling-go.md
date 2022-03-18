@@ -2,7 +2,11 @@
 title: Autoscaling Using Go
 layout:
     1: left
+    2: right
     default: wizard
+imports:
+    - docs/install/README.md
+    - docs/snippets/kubectl-guidebook.md
 wizard:
     steps:
         - match: Prerequisites
@@ -47,6 +51,10 @@ codeblocks:
 ---
 
 --8<-- "https://raw.githubusercontent.com/kubernetes-sigs/kui/master/plugins/plugin-kubectl/notebooks/knative-what-is-it-good-for.md"
+
+---
+
+::imports
 
 ---
 
