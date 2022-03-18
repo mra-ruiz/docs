@@ -253,7 +253,7 @@ You can safely reroute traffic from a live version of an application to a new ve
 
     !!! tip
         You can remove the first Revision instead of setting it to 0% of traffic if you do not plan to roll back the Revision. Non-routeable Revision objects are then garbage-collected.
-    <!--TODO: ADD GARBAGE COLLECTION DOCS-->
+<!--<!--TODO: ADD GARBAGE COLLECTION DOCS-->
 
 1. Visit the URL of the first Revision to verify that no more traffic is being sent to the old version of the app.
 
