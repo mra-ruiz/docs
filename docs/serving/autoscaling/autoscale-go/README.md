@@ -24,8 +24,11 @@ A demonstration of the autoscaling capabilities of a Knative Serving Revision.
 
 1. Obtain the URL of the service (once `Ready`):
 
-     ```{ .bash .no-copy }
+     ```bash
      $ kubectl get ksvc autoscale-go
+     ```
+
+    ```
      NAME            URL                                                LATESTCREATED         LATESTREADY           READY   REASON
      autoscale-go    http://autoscale-go.default.1.2.3.4.sslip.io    autoscale-go-96dtk    autoscale-go-96dtk    True
      ```

@@ -1,7 +1,7 @@
 ---
 title: Install Docker
 codeblocks:
-    - match: ^(docker info >& /dev/null) && echo “You have Docker!” \|\| (echo “Please install Docker” && exit 1)$
+    - match: ^\(docker info >& /dev/null\) && echo “You have Docker!” \|\| \(echo “Please install Docker” && exit 1\)$
       validate: $body
 ---
 

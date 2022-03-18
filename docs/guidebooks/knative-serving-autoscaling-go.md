@@ -20,14 +20,30 @@ codeblocks:
     - match: ^git clone -b "{{ branch }}" https://github.com/knative/docs knative-docs
           cd knative-docs$
       validate: $? -e 0 && exit 0 \|\| exit 1
-    # Validation for Step 2: Building your application
+    # Validation for Step 2: Deploy the Service
     - match: ^kubectl apply -f docs/serving/autoscaling/autoscale-go/service.yaml$
       validate: kn service describe service
-    - match: ^ \$ kubectl apply
-      optional: true
+    - match: ^kubectl get ksvc autoscale-go$
+      validate: $? -e 0 && exit 0 \|\| exit 1
     # Validation for Step 3: Load the Service
     - match: ^curl "http://autoscale-go.default.1.2.3.4.sslip.io?sleep=100&prime=10000&bloat=5"$
       validate: $body
+    - match: ^hey -z 30s -c 50
+      validate: $? -e 0 && exit 0 \|\| exit 1
+    # Validation for Step 5: Other Experiments
+    - match: ^hey -z 60s -c 100
+      validate: $? -e 0 && exit 0 \|\| exit 1
+    - match: ^hey -z 60s -q 100
+      validate: $? -e 0 && exit 0 \|\| exit 1
+    - match: ^hey -z 60s -q 100
+      validate: $? -e 0 && exit 0 \|\| exit 1
+    - match: ^hey -z 60s -q 100
+      validate: $? -e 0 && exit 0 \|\| exit 1
+    - match: ^hey -z 60s -c 5
+      validate: $? -e 0 && exit 0 \|\| exit 1
+    # Validation for Step 6: Cleanup
+    - match: ^kubectl delete -f docs/serving/autoscaling/autoscale-go/service.yaml$
+      validate: $? -e 0 && exit 0 \|\| exit 1
 ---
 
 --8<-- "https://raw.githubusercontent.com/kubernetes-sigs/kui/master/plugins/plugin-kubectl/notebooks/knative-what-is-it-good-for.md"
