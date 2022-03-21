@@ -6,9 +6,9 @@ layout:
     default: wizard
 imports:
     - docs/snippets/docker-guidebook.md
-    - docs/install/README.md
-    - docs/snippets/install-kn.md
     - docs/snippets/kubectl-guidebook.md
+    - docs/snippets/install-kn.md
+    - docs/install/README.md
 wizard:
     steps:
         - name: Install Required Tools
