@@ -20,6 +20,7 @@ cluster by using one of the following deployment options:
         - [Install Knative Eventing by using YAML](../install/yaml-install/eventing/install-eventing-with-yaml.md)
 
     :import{docs/install/yaml-install/serving/install-serving-with-yaml.md}
+    :import{docs/install/yaml-install/eventing/install-eventing-with-yaml.md}
 
 === "Knative Operator"
 
@@ -28,6 +29,7 @@ cluster by using one of the following deployment options:
     :import{docs/install/operator/knative-with-operators.md}
 
 === "Knative offerings"
+
     Follow the documentation for vendor managed [Knative offerings](knative-offerings.md).
     
     :import{docs/install/knative-offerings.md}
