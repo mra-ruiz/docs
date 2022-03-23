@@ -10,9 +10,9 @@ imports:
 wizard:
     steps:
         - name: Install required tools
-        - name: Install the Knative quickstart plugin
+        - name: Install the quickstart CLI plugin
           description: The plugin sets up Knative against kind by creating a kind cluster populated with Knative
-        - Run the Knative quickstart plugin
+        - Instantiate Knative
         # - Clean Up
 codeblocks:
     # Validation for step 2: install the knative quickstart plugin

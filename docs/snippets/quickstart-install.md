@@ -10,7 +10,7 @@ The plugin installs a preconfigured Knative deployment on a local Kubernetes clu
     For a production ready installation, see the [YAML-based installation](/docs/install/yaml-install/)
     or the [Knative Operator installation](/docs/install/operator/knative-with-operators/).
 
-## Install the Knative quickstart plugin
+## Install the quickstart CLI plugin
 
 To get started, install the Knative `quickstart` plugin:
 
@@ -60,7 +60,7 @@ To get started, install the Knative `quickstart` plugin:
           mv kn-quickstart /usr/local/bin
           ```
 
-## Run the Knative quickstart plugin
+## Instantiate Knative
 
 The `quickstart` plugin completes the following functions:
 
@@ -72,7 +72,7 @@ The `quickstart` plugin completes the following functions:
 
 To get a local deployment of Knative, run the `quickstart` plugin:
 
-=== "Using kind"
+=== "On kind"
 
     1. Install Knative and Kubernetes on a local Docker daemon by running:
 
@@ -82,7 +82,7 @@ To get a local deployment of Knative, run the `quickstart` plugin:
         kn quickstart kind
         ```
 
-=== "Using minikube"
+=== "On minikube"
 
     1. Install Knative and Kubernetes in a minikube instance by running:
 
