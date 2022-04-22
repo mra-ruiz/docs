@@ -107,6 +107,8 @@ You will need:
 
 1. To build the sample code into a container, and push using Docker Hub, enter the following commands and replace `{username}` with your Docker Hub username:
 
+  :import{docs/snippets/docker-guidebook.md}
+
    ```bash
    # Build the container on your local machine
    docker build -t {username}/helloworld-go .
@@ -117,8 +119,6 @@ You will need:
 
 1. After the build has completed and the container is pushed to docker hub, you
    can deploy the app into your cluster.  Choose one of the following methods:
-
-
 
 === "yaml"
 
@@ -145,6 +145,8 @@ You will need:
           Check that the container image value in the `service.yaml` file matches the container you built in the previous step.
 
        1. Apply the configuration using `kubectl`:
+
+          :import{docs/snippets/kubectl-guidebook.md}
 
           ```bash
           kubectl apply --filename service.yaml
@@ -175,6 +177,8 @@ You will need:
 
        Use `kn` to deploy the service:
 
+      :import{docs/snippets/install-kn.md}
+
        ```bash
        kn service create helloworld-go --image=docker.io/{username}/helloworld-go --env TARGET="Go Sample v1"
        ```
@@ -198,11 +202,6 @@ You will need:
 
        You can then access your service through the resulting URL.
 
-
-
-
-
-
 ## Verifying
 
 1. Now you can make a request to your app and see the result. Replace
@@ -221,11 +220,17 @@ To remove the sample app from your cluster, delete the service record:
 
 
 === "kubectl"
-    ```bash
-    kubectl delete --filename service.yaml
-    ```
+
+  :import{docs/snippets/kubectl-guidebook.md}
+
+  ```bash
+  kubectl delete --filename service.yaml
+  ```
 
 === "kn"
-    ```bash
-    kn service delete helloworld-go
-    ```
+
+  :import{docs/snippets/install-kn.md}
+
+  ```bash
+  kn service delete helloworld-go
+  ```
