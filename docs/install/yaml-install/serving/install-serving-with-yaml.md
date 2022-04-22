@@ -1,7 +1,3 @@
----
-title: Install Knative - YAML
----
-
 # Installing Knative Serving using YAML files
 
 This topic describes how to install Knative Serving by applying YAML files using the `kubectl` CLI.
