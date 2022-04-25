@@ -18,6 +18,9 @@ you can reinstall Knative on a new cluster using the [`quickstart` plugin](quick
     :import{docs/snippets/kind-guidebook.md}
 
     ```bash
+    ---
+    optional: true
+    ---
     kind delete clusters knative
     ```
 
@@ -26,7 +29,9 @@ you can reinstall Knative on a new cluster using the [`quickstart` plugin](quick
     :import{docs/snippets/minikube-guidebook.md}
     
     Delete your `minikube` cluster by running the command:
-
+    ---
+    optional: true
+    ---
     ```bash
     minikube delete -p knative
     ```
