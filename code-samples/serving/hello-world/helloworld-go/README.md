@@ -214,23 +214,31 @@ You will need:
 
    > Note: Add `-v` option to get more detail if the `curl` command failed.
 
-## Removing
+??? tip "Removing"
 
-To remove the sample app from your cluster, delete the service record:
+    To remove the sample app from your cluster, delete the service record:
 
 
-=== "kubectl"
+    === "kubectl"
 
-  :import{docs/snippets/kubectl-guidebook.md}
+      :import{docs/snippets/kubectl-guidebook.md}
 
-  ```bash
-  kubectl delete --filename service.yaml
-  ```
+      ```bash
+      ---
+      optional: true
+      ---
+      kubectl delete --filename service.yaml
+      ```
 
-=== "kn"
+    === "kn"
 
-  :import{docs/snippets/install-kn.md}
+      :import{docs/snippets/install-kn.md}
 
-  ```bash
-  kn service delete helloworld-go
-  ```
+      ```bash
+      ---
+      optional: true
+      ---
+      kn service delete helloworld-go
+      ```
+
+    --8<-- "../docs/getting-started/clean-up.md"

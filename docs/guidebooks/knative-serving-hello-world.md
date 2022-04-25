@@ -70,5 +70,3 @@ This application will be deplyoyed as a Knative Service instead of a Kubernetes 
     If you install Knative using Quickstart, when you run the quickstart plugin, a cluster called `knative` will be created. To complete the deployment of the "Hello World" application, a pre-built app with a container already pushed to Docker hub will be used.
 
 --8<-- "code-samples/serving/hello-world/helloworld-go/README.md"
-
---8<-- "../docs/getting-started/clean-up.md"
