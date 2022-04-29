@@ -72,9 +72,9 @@ The `quickstart` plugin completes the following functions:
 
 To get a local deployment of Knative, run the `quickstart` plugin:
 
-=== "On kind"
+=== "Using kind"
 
-    1. Install Knative and Kubernetes on a local Docker daemon by running:
+    1. Install Knative and Kubernetes Using a local Docker daemon by running:
 
         :import{docs/snippets/kind-guidebook.md}
 
@@ -82,7 +82,7 @@ To get a local deployment of Knative, run the `quickstart` plugin:
         kn quickstart kind
         ```
 
-=== "On minikube"
+=== "Using minikube"
 
     1. Install Knative and Kubernetes in a minikube instance by running:
 
