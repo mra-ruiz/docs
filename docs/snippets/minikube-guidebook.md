@@ -1,7 +1,7 @@
 ---
 title: Install minikube
 imports:
-    - docker-guidebook.md
+    - https://raw.githubusercontent.com/guidebooks/store/main/guidebooks/docker/install.md
 codeblocks:
     - match: ^\(minikube version >& /dev/null\) && echo "You have minikube!" \|\| \(echo "Please install minikube" && exit 1\)$
       validate: $body

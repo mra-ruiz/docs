@@ -5,10 +5,10 @@ layout:
     2: right
     default: wizard
 imports:
-    - docs/snippets/docker-guidebook.md
+    - https://raw.githubusercontent.com/guidebooks/store/main/guidebooks/docker/install.md
     - docs/install/README.md
     - docs/snippets/install-kn.md
-    - docs/snippets/kubectl-guidebook.md
+    - https://raw.githubusercontent.com/guidebooks/store/main/guidebooks/kubernetes/kubectl.md
 wizard:
     steps:
         - Using tags to create target URLs

@@ -6,7 +6,7 @@ layout:
     default: wizard
 imports:
     - docs/install/README.md
-    - docs/snippets/kubectl-guidebook.md
+    - https://raw.githubusercontent.com/guidebooks/store/main/guidebooks/kubernetes/kubectl.md
 wizard:
     steps:
         - match: Prerequisites

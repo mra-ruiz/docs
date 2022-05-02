@@ -5,7 +5,7 @@ layout:
     2: right
     default: wizard
 imports:
-    - kubectl-guidebook.md
+    - https://raw.githubusercontent.com/guidebooks/store/main/guidebooks/kubernetes/kubectl.md
     - install-kn.md
 wizard:
     steps:

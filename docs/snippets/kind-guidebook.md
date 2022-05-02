@@ -1,7 +1,7 @@
 ---
 title: Install kind
 imports:
-    - docker-guidebook.md
+    - https://raw.githubusercontent.com/guidebooks/store/main/guidebooks/docker/install.md
 codeblocks:
     - match: ^\(kind version >& /dev/null\) && echo "You have Kind!" \|\| echo "Please install Kind"$
       validate: $body
